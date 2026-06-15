@@ -24,8 +24,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Paksa semua URL asset dan routing menggunakan HTTPS jika diakses lewat proxy Railway
-        if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') { 
-            URL::forceScheme('https');             
+        if (
+            $this->app->environment('production') &&
+            request()->header('X-Forwarded-Proto') === 'https'
+        ) {
+            URL::forceScheme('https');
         }
 
         DateTimePicker::configureUsing(fn(DateTimePicker $component) => $component->native(false));
