@@ -34,7 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(CustomLogin::class)
-            ->brandLogo(asset('images/logo.png')) 
+            ->brandLogo(asset('images/logolaravel.png')) 
             ->brandLogoHeight('3rem') 
             ->font('Poppins')
             ->authGuard('web')
