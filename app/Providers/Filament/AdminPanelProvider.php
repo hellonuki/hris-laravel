@@ -35,7 +35,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(CustomLogin::class)
             ->brandLogo(asset('images/logolaravel.png')) 
-            ->brandLogoHeight('3rem') 
+            ->brandLogoHeight('6rem') 
             ->font('Poppins')
             ->authGuard('web')
             ->databaseNotifications(true, false)
